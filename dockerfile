@@ -5,7 +5,7 @@ WORKDIR/home/container
 ENVHOME=/home/container
 USER[container]
 ADDfile:ead0891f0ff8c5a87e5e57baef22ee1bebe88c53375dca8653f4c9b51cc7cb10 in /passwd.template
-RUNdpkg --add-architecture i386 && apt-get update && apt-get upgrade -y && apt-get install -y libnss-wrapper gettext-base tar curl gcc g++ libc6 libtbb2 libtbb2:i386 lib32gcc1 lib32stdc++6 lib32tinfo5 lib32z1 libtinfo5:i386 libncurses5:i386 libcurl3-gnutls:i386 && useradd -m -d /home/container -s /bin/bash container && touch ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} && chgrp 0 ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} && chmod g+rw ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP}
+RUNdpkg --add-architecture i386 && apt-get update && apt-get upgrade -y && apt-get install -y libnss-wrapper gettext-base tar curl gcc g++ libc6 libtbb2 libtbb2:i386 lib32gcc1 lib32stdc++6 lib32tinfo5 lib32z1 libtinfo5:i386 libncurses5:i386 libcurl3-gnutls:i386 tmux && useradd -m -d /home/container -s /bin/bash container && touch ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} && chgrp 0 ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP} && chmod g+rw ${NSS_WRAPPER_PASSWD} ${NSS_WRAPPER_GROUP}
 ENVNSS_WRAPPER_GROUP=/tmp/group
 ENVNSS_WRAPPER_PASSWD=/tmp/passwd
 ENVUSER_NAME=container
